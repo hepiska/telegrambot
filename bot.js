@@ -1,8 +1,19 @@
 const telegram = require('node-telegram-bot-api');
-const belitunginfo =('377554539:AAH0C3x8hOBdZncjErsA7jJ9gYknpCe7oxM');
+var token = process.env.TOKEN;
+// const belitunginfo =('377554539:AAH0C3x8hOBdZncjErsA7jJ9gYknpCe7oxM');
 let ourwedingfo ="373958600:AAFuS2O6YNBHeTvWc6cGQNQmkQ6dNQ8_yZI"
+var bot;
+if(process.env.NODE_ENV === 'production') {
+  bot = new telegram(token);
+  bot.setWebHook(process.env.HEROKU_URL + bot.token);
+}
+else {
+  bot = new telegram(ourwedingfo, { polling: true });
+}
 
-var bot = new telegram (ourwedingfo,{polling:true});
+console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
+
+//var bot = new telegram (ourwedingfo,{polling:true});
 
 bot.onText(/\/start/, function(message) {
 bot.sendMessage(message.chat.id,`halo ${message.from.first_name} ${message.from.last_name} selamat datang di Galuh & Ego wedding info bot:
@@ -52,3 +63,4 @@ more info : https://www.traveloka.com/fullsearch?ap=JKTA.TJQ&dt=03-03-2017.NA&ps
 });
 
 //bot.message_loop(run_forever=True, source=update_queue)
+module.exports = bot;

@@ -1,24 +1,30 @@
 {
-  "name": "telegrambot",
-  "version": "1.0.0",
-  "description": "trying make telegram bot",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hepiska/telegrambot.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hepiska/telegrambot/issues"
-  },
-  "homepage": "https://github.com/hepiska/telegrambot#readme",
-  "dependencies": {
-    "darwin": "0.0.5",
-    "node-telegram-bot-api": "^0.27.0",
-    "path": "^0.12.7"
-  }
+    "name": "telegrambot",
+    "version": "1.0.0",
+    "description": "trying make telegram bot",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "export $(cat .env | xargs) && node index.js",
+        "set_env": "export $(cat .env | xargs)",
+        "switch_to_dev": "export $(cat .env | xargs) && wget --spider https://api.telegram.org/bot$TOKEN/setWebhook?url= --delete-after && node index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hepiska/telegrambot.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/hepiska/telegrambot/issues"
+    },
+    "homepage": "https://github.com/hepiska/telegrambot#readme",
+    "dependencies": {
+        "axios": "^0.15.3",
+        "body-parser": "^1.16.1",
+        "darwin": "0.0.5",
+        "express": "^4.14.1",
+        "node-telegram-bot-api": "^0.27.0",
+        "path": "^0.12.7"
+    }
 }
