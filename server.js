@@ -5,11 +5,11 @@ let ourwedingfo ="373958600:AAFuS2O6YNBHeTvWc6cGQNQmkQ6dNQ8_yZI"
 var bot = new telegram (ourwedingfo,{polling:true});
 
 bot.onText(/\/start/, function(message) {
-bot.sendMessage(message.chat.id,`halo ${message.from.first_name} ${message.from.last_name} selamat datang di Galuh & Ego weding info bot:
+bot.sendMessage(message.chat.id,`halo ${message.from.first_name} ${message.from.last_name} selamat datang di Galuh & Ego wedding info bot:
 ketik
 /undangan : untuk melihat undangan,
 /lokasi_galuh: untuk melihat lokasi acara mempelai wanita,
-/lokasi_ego:untuk melihat lokasi acara memperlai pria,
+/lokasi_ego:untuk melihat lokasi acara mempelai pria,
 /video : untuk melihat prewedding video,
 /flight : untuk melihat jadwal penerbangan,
 `);
