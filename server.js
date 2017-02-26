@@ -51,4 +51,4 @@ more info : https://www.traveloka.com/fullsearch?ap=JKTA.TJQ&dt=03-03-2017.NA&ps
 `);
 });
 
-bot.message_loop(run_forever=True, source=update_queue)
+//bot.message_loop(run_forever=True, source=update_queue)
