@@ -49,5 +49,6 @@ NAM       : 14.55,16.40
 
 more info : https://www.traveloka.com/fullsearch?ap=JKTA.TJQ&dt=03-03-2017.NA&ps=1.0.0&sc=ECONOMY
 `);
-
 });
+
+bot.message_loop(run_forever=True, source=update_queue)
